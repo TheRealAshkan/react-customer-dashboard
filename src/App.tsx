@@ -1,16 +1,15 @@
-import { Button } from "./components/ui/button"
+import { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
-function App() {
+const App: React.FC = () => {
+  const [isAuthenticated] = useState(true);
 
   return (
-    <>
-       <h1 className="text-2xl font-bold underline">
-        Hello world!
-      </h1>
-      <Button>Click me</Button>
+    <BrowserRouter>
+      <AppRoutes isAuthenticated={isAuthenticated} />
+    </BrowserRouter>
+  );
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;
