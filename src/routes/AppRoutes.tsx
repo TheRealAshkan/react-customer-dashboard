@@ -4,6 +4,7 @@ import PublicRoute from "./PublicRoute";
 import AuthPage from "@/pages/AuthPage";
 import DashboardPage from "@/pages/DashboardPage";
 import NotFoundPage from "@/pages/NotFoundPage";
+import DashboardLayout from "@/components/layouts/DashboardLayout";
 
 interface AppRoutesProps {
   isAuthenticated: boolean;
@@ -19,8 +20,12 @@ const AppRoutes: React.FC<AppRoutesProps> = ({ isAuthenticated }) => {
       </Route>
 
       {/* Protected Routes */}
+
       <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route element={<DashboardLayout />}>
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="profile" element={<DashboardPage />} />
+        </Route>
       </Route>
 
       {/* Fallback Route */}
