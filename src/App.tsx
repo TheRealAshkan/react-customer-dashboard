@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 
 const App: React.FC = () => {
-  const [isAuthenticated] = useState(true);
+  const [isAuthenticated] = useState(false);
 
   return (
     <BrowserRouter>
