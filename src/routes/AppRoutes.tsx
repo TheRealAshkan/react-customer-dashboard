@@ -1,11 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import PublicRoute from "./PublicRoute";
-import AuthPage from "@/pages/AuthPage";
+import AuthPage from "@/pages/auth/AuthPage";
 import DashboardPage from "@/pages/DashboardPage";
 import NotFoundPage from "@/pages/NotFoundPage";
-
-// 👇 Import صفحات
 
 interface AppRoutesProps {
   isAuthenticated: boolean;
