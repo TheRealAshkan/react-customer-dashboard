@@ -1,11 +1,7 @@
 import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -41,24 +37,25 @@ const items = [
     icon: Settings,
   },
   {
-    title: "تنظیمات",
+    title: "اطلاعات حساب کاربری",
     url: "/setting",
     icon: Settings,
   },
+   {
+    title: "خروج",
+    url: "/logout",
+    icon: Settings,
+  },
+
 ]
 
 
-export function AppSidebar() {
+
+export default function Navbar() {
   return (
-    <Sidebar side="right">
-      <SidebarHeader>
-        
-        logo
-
-      </SidebarHeader>
-
-      <SidebarContent>
-        <SidebarGroup>
+    <>
+    
+      <SidebarGroup>
           <SidebarGroupLabel>منو</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
@@ -74,11 +71,7 @@ export function AppSidebar() {
                 ))}
               </SidebarMenu>
             </SidebarGroupContent>
-          </SidebarGroup>
-        <SidebarGroup />
-        
-      </SidebarContent>
-      <SidebarFooter />
-    </Sidebar>
+        </SidebarGroup>
+    </>
   )
 }

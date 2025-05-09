@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom";
-import Header from "../Header";
-import { AppSidebar } from "../Sidebar";
-import { SidebarProvider, SidebarTrigger } from "../ui/sidebar";
+import Header from "../common/Header";
+import { AppSidebar } from "../common/Sidebar";
+import { SidebarProvider } from "../ui/sidebar";
 
 export default function DashboardLayout() {
     return (
         <SidebarProvider>
         <AppSidebar />
-        <main>
+        <main className="w-full">
             <Header />
-            <SidebarTrigger />
+            
             <Outlet />
         </main>
         </SidebarProvider>
