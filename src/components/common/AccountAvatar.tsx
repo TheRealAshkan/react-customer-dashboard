@@ -2,33 +2,43 @@
    
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-import { SidebarGroup } from "../ui/sidebar"
-
+import { Link } from "react-router-dom"
+import { useCustomerStore } from "@/store/customerStore"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function AccountAvatar() {
+    const {firstname,lastname,mobile,image} = useCustomerStore()
   return (
-   <>
-        <SidebarGroup className="flex align-middle justify-center text-center ">
-            <div className="relative bg-stone-200 rounded-2xl  pt-10 mt-8">
-            <Avatar className="mx-auto w-16 h-16 absolute top-[-30px] right-[38%]">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col  ">
-                <span>اشکان مهدی زاده</span>
-                <span>09921938100</span>
-            </div>
-            </div>
-          
-        </SidebarGroup>
-        <SidebarGroup >
-            <div className="flex flex-row bg-green-300  rounded-2xl p-3 gap-3">
+   <div className="flex gap-4">
+        <DropdownMenu>
+            <DropdownMenuTrigger className="cursor-pointer">
+                <Avatar className="w-10 h-10" >
+                    <AvatarImage src={image} />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                    
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+            <DropdownMenuLabel>{firstname} {lastname}</DropdownMenuLabel>
+            <DropdownMenuLabel>{mobile}</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>Billing</DropdownMenuItem>
+            <DropdownMenuItem>Team</DropdownMenuItem>
+            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+        <Link to="/" className="flex flex-row bg-green-100 border-2 border-green-300  rounded-xl p-2 gap-2 text-md">
                 <span>اعتبار کیف پول:</span>
                 <span>1,000,000 تومان</span>
-            </div>
-        </SidebarGroup>
-
-          
-   </>
+        </Link>                   
+   </div>
   )
 }

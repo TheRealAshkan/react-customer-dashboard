@@ -5,20 +5,18 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar"
 import Navbar from "./Navbar"
-import AccountAvatar from "./AccountAvatar"
 
 
 
 export function AppSidebar() {
   return (
     <Sidebar side="right">
-      <SidebarHeader>LOGO</SidebarHeader>
+      <SidebarHeader>
+          <img src="https://aghayebargh.com/image/catalog/logo/logo-02.jpg" className="h-16 w-32 mr-6" />
+      </SidebarHeader>
 
       <SidebarContent>
-        <AccountAvatar />
         <Navbar />
- 
-        
       </SidebarContent>
 
       <SidebarFooter />
