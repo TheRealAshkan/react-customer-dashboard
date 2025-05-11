@@ -9,8 +9,9 @@ export default function DashboardLayout() {
         <AppSidebar />
         <main className="w-full">
             <Header />
-            
+            <div className="w-full p-4">
             <Outlet />
+            </div>
         </main>
         </SidebarProvider>
     
