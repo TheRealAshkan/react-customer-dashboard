@@ -6,17 +6,12 @@ import AccountAvatar from "./AccountAvatar";
 export default function Header() {
   return (
     <div className="flex w-full justify-between p-5">
-      
+  
       <div className="flex">
-      <SidebarTrigger />
+        <SidebarTrigger />
       </div>
 
-      
-      
-
       <AccountAvatar />
-
-
 
     </div>
   )

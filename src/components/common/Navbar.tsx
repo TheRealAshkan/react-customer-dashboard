@@ -13,7 +13,7 @@ import { Link } from "react-router-dom"
 const items = [
   {
     title: "پیشخوان",
-    url: "/",
+    url: "/dashboard",
     icon: Home,
   },
   {
@@ -38,7 +38,7 @@ const items = [
   },
   {
     title: "اطلاعات حساب کاربری",
-    url: "/setting",
+    url: "/profile",
     icon: Settings,
   },
    {

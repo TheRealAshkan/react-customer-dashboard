@@ -1,8 +1,26 @@
+import PageTopbar from "@/components/common/PageTopbar";
 import OrderStatistics from "@/components/dashboard/OrderStatistics";
 
 
 export default function DashboardPage() {
   return (
+   <>
+   
+
+
+      <PageTopbar
+        title="داشبورد"
+        routes = {
+          [
+            {
+              'name':'حساب کاربری',
+              'href':'/'
+            },
+          ]
+        }
+
+      />
+    
     <div className="grid grid-cols-3 gap-4">
       
       <OrderStatistics
@@ -25,5 +43,6 @@ export default function DashboardPage() {
       
 
     </div>
+   </>
   )
 }
